@@ -1,13 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="post">
-        {% if post.created_at %}
-            <div class="date">
-                {{ post.created_at }}
-            </div>
-        {% endif %}
-        <h1>{{ post.headline }}</h1>
-        <p>{{ post.body|linebreaksbr }}</p>
+<link href="css/blog-post.css" rel="stylesheet">
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-8">
+
+        <h1 class="mt-4">{{ post.headline }}</h1>
+
+
+        <hr>
+
+        <p>{{ post.created_at }}</p>
+
+        <hr>
+
+        <img class="img-fluid rounded" src="{{ post.pic_src_link }}" alt="">
+
+        <hr>
+
+        <!-- Post Content -->
+        <p class="lead">{{post.body}}</p>
+
+        <hr>
+      </div>
     </div>
+  </div>
 {% endblock %}

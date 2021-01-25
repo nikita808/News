@@ -3,12 +3,17 @@
 {% block content %}
 {% load static %}
 
-
+<div style="text-align:center">
 <form action="" method="post">
     {% csrf_token %}
-    <p>{{ form.headline }} Headline</p>
-    <p>{{ form.body }} Body</p>
+    <p> Заголовок </p>
+    <p>{{ form.headline }} </p>
+    <p>Текст новости</p>
+    <p>{{ form.body }} </p>
+    <p>Сслыка на фото</p>
+    <p> {{ form.pic_src_link }}</p>
     <input type="submit" value="Submit">
 </form>
+</div>
 
 {% endblock %}
