@@ -1,0 +1,66 @@
+{%extends 'base.html'%}
+
+{% block content %}
+{% load static %}
+<link href="{% static 'css/donation.css' %}" rel="stylesheet">
+<script src="{% static 'js/donation.js' %}"></script>
+
+<div class="container theme-background-white main-body">
+    <div class="col-md-12">
+        <div class="row donate-bar">
+            <div class="col-md-4 theme-blue">
+                ПОЖАЛУЙСТА, ДАЙТЕ ДЕНЕГ
+            </div>
+            <div class="col-md-8">
+                <ul class="nav navbar-nav navbar-left donate-buttons" id="donate-buttons">
+                    <li><a href="#">
+                        <button class="btn-blue active" data-dollars='25'
+                                data-impact="Covers housing or counseling services for one person">
+                            25
+                        </button>
+                    </a></li>
+                    <li><a href="#">
+                        <button class="btn-blue" data-dollars='50'
+                                data-impact="Covers housing or counseling services for two people">
+                            50
+                        </button>
+                    </a></li>
+                    <li><a href="#">
+                        <button class="btn-blue" data-dollars='100'
+                                data-impact="Covers housing or counseling services for four people">
+                            100
+                        </button>
+                    </a></li>
+                    <li><a href="#">
+                        <button class="btn-blue" data-dollars='500'
+                                data-impact="Covers housing or counseling services for twenty people">
+                            1000
+                        </button>
+                    </a></li>
+                    <li id="other"><a href="#">
+                        <button class="btn-blue-other" data-dollars='other' data-impact="Thank you!">
+                            ДРУГОЕ
+                        </button>
+                    </a></li>
+                    <li id="other-input">
+                        <span>$</span>
+                        <input data-impact="That’s great. Thank you!">
+                    </li>
+                    <li><a href="#">
+                        <button class="btn-green" data-toggle="modal" data-target="#myModal">
+                            ДАЛЕЕ
+                        </button>
+                    </a></li>
+                    <li style="display: none;"><a href="#">
+                        УЗНАТЬ БОЛЬШЕ<i class="fa fa-chevron-right margin-left"></i>
+                    </a></li>
+                </ul>
+                <p class="impact">
+                    Мы команда из одного человека и у нас нет денег.....
+                </p>
+            </div>
+        </div><!--/.donate-bar-->
+    </div><!-- /.col-md-12 -->
+</div>
+
+{% endblock %}

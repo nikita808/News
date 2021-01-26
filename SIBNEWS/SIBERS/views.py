@@ -1,8 +1,7 @@
 from datetime import datetime
 
 from django.core.paginator import Paginator
-from django.http import HttpResponse, HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404
 
 from .forms import PostForm
 from .models import News
@@ -10,7 +9,7 @@ from .models import News
 
 def index(request):
     qs = News.objects.all().order_by('-created_at')
-    paginator = Paginator(qs, 2)
+    paginator = Paginator(qs, 10)
     page = request.GET.get('page')
     object_list = paginator.get_page(page)
     return render(request, 'index.html', {'object_list': object_list})
@@ -33,3 +32,7 @@ def new_post(request):
 def post_detail(request, pk):
     post = get_object_or_404(News, pk=pk)
     return render(request, 'post_detail.html', {'post': post})
+
+
+def donation(request):
+    return render(request, 'donation.html')

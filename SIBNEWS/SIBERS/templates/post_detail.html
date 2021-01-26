@@ -1,31 +1,32 @@
 {% extends 'base.html' %}
-
+{% load static %}
+<link href="{% static 'css/blog-post.css' %}" rel="stylesheet">
 {% block content %}
-<link href="css/blog-post.css" rel="stylesheet">
-  <div class="container">
+
+<div class="container">
 
     <div class="row">
 
-      <div class="col-lg-8">
+        <div class="col-lg-8">
 
-        <h1 class="mt-4">{{ post.headline }}</h1>
+            <h1 class="mt-4">{{ post.headline }}</h1>
 
 
-        <hr>
+            <hr>
 
-        <p>{{ post.created_at }}</p>
+            <p>{{ post.created_at }}</p>
 
-        <hr>
+            <hr>
 
-        <img class="img-fluid rounded" src="{{ post.pic_src_link }}" alt="">
+            <img class="img-fluid rounded" src="{{ post.pic_src_link }}" alt="">
 
-        <hr>
+            <hr>
 
-        <!-- Post Content -->
-        <p class="lead">{{post.body}}</p>
+            <!-- Post Content -->
+            <p class="lead">{{post.body}}</p>
 
-        <hr>
-      </div>
+            <hr>
+        </div>
     </div>
-  </div>
+</div>
 {% endblock %}
